@@ -63,7 +63,7 @@ em{font-style:normal}
 }
 .nav.scrolled{background:rgba(8,6,12,.9)}
 .brand{display:flex;align-items:center;gap:.6rem;font-family:var(--font-display)}
-.brand-bolt{height:34px;width:auto;filter:drop-shadow(0 0 6px rgba(255,46,196,.7))}
+.brand-bolt{height:38px;width:auto}
 .brand-name{font-size:1.35rem;letter-spacing:.02em;line-height:.9}
 .brand-name em{color:var(--yellow);text-shadow:var(--glow-yellow)}
 .nav-links{display:flex;gap:1.6rem}
