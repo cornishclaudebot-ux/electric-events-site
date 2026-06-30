@@ -53,7 +53,7 @@ const DOW_S = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
 const MON_S = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 const money = n => "$" + n.toFixed(2);
 const mapsUrl = q => "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(q);
-const boltImg = 'assets/bolt.svg';
+const boltImg = 'assets/bolt.png?v=3';
 
 function toast(msg){
   const t = $("#toast");
