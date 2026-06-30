@@ -33,10 +33,8 @@ const CONFIG = {
      paths (e.g. "assets/sometimes.jpg") as they come in.
      placeholder:true flags sample products to swap before launch.       */
   products: [
-    { id:"sometimes", name:"Sometimes", price:20, stock:"Low stock", img:null, placeholder:false },
-    { id:"bolt-tee",  name:"Bolt Tee",  price:28, stock:"In stock",  img:null, placeholder:true },
-    { id:"bolt-hood", name:"Bolt Hoodie", price:55, stock:"In stock", img:null, placeholder:true },
-    { id:"sticker",   name:"Bolt Sticker Pack", price:8, stock:"In stock", img:null, placeholder:true },
+    { id:"sometimes", name:"Sometimes", price:20, stock:"Low stock", img:"assets/sometimes.jpg", placeholder:false },
+    { id:"the-44",    name:"The 44",    price:10, stock:"",           img:null, placeholder:false },
   ],
 
   checkout: {
@@ -196,7 +194,7 @@ function renderMerch(){
     const el = document.createElement("div");
     el.className = "product";
     el.innerHTML = `
-      <div class="product-img">
+      <div class="product-img${p.img?' has-photo':''}">
         <img src="${p.img||boltImg}" alt="${p.name}">
         ${p.placeholder?'<span class="ph-tag">Sample</span>':''}
       </div>

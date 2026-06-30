@@ -1,11 +1,16 @@
 <svg viewBox="0 0 300 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Electric Events AZ lightning bolt">
   <defs>
-    <filter id="neon" x="-70%" y="-70%" width="240%" height="240%">
-      <feGaussianBlur in="SourceAlpha" stdDeviation="9" result="b1"/>
+    <!-- true neon: warm yellow outer halo + hot-pink inner glow + crisp graphic -->
+    <filter id="neon" x="-80%" y="-80%" width="260%" height="260%">
       <feGaussianBlur in="SourceAlpha" stdDeviation="20" result="b2"/>
+      <feFlood flood-color="#FFD23D" flood-opacity="0.75"/>
+      <feComposite in2="b2" operator="in" result="halo"/>
+      <feGaussianBlur in="SourceAlpha" stdDeviation="7" result="b1"/>
+      <feFlood flood-color="#FF2EC4" flood-opacity="0.95"/>
+      <feComposite in2="b1" operator="in" result="glow"/>
       <feMerge>
-        <feMergeNode in="b2"/>
-        <feMergeNode in="b1"/>
+        <feMergeNode in="halo"/>
+        <feMergeNode in="glow"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
@@ -16,32 +21,25 @@
     </linearGradient>
   </defs>
 
-  <!-- slender, leaning bolt with stepped (notched) right edge -->
   <g filter="url(#neon)">
-    <path d="M188 28
-             L96 250
-             L150 250
-             L120 572
-             L226 300
-             L168 300
-             Z"
-          fill="url(#yellowCore)" stroke="#FF2EC4" stroke-width="13" stroke-linejoin="round"/>
-  </g>
-  <!-- crisp double pink tube -->
-  <path d="M188 28 L96 250 L150 250 L120 572 L226 300 L168 300 Z"
-        fill="none" stroke="#FF2EC4" stroke-width="12" stroke-linejoin="round"/>
-  <path d="M188 28 L96 250 L150 250 L120 572 L226 300 L168 300 Z"
-        fill="none" stroke="#FF8FE0" stroke-width="3.5" stroke-linejoin="round" opacity="0.9"/>
-
-  <!-- right-side segment notches (the E / ladder detail) -->
-  <g stroke="#FF2EC4" stroke-width="10" stroke-linecap="round" opacity="0.95">
-    <line x1="150" y1="104" x2="188" y2="104"/>
-    <line x1="132" y1="158" x2="172" y2="158"/>
-    <line x1="114" y1="212" x2="156" y2="212"/>
-  </g>
-  <g stroke="#FF8FE0" stroke-width="2.5" stroke-linecap="round" opacity="0.85">
-    <line x1="150" y1="104" x2="186" y2="104"/>
-    <line x1="132" y1="158" x2="170" y2="158"/>
-    <line x1="114" y1="212" x2="154" y2="212"/>
+    <!-- yellow core fill -->
+    <path d="M188 28 L96 250 L150 250 L120 572 L226 300 L168 300 Z"
+          fill="url(#yellowCore)"/>
+    <!-- hot-pink neon tube (double line) -->
+    <path d="M188 28 L96 250 L150 250 L120 572 L226 300 L168 300 Z"
+          fill="none" stroke="#FF2EC4" stroke-width="13" stroke-linejoin="round"/>
+    <path d="M188 28 L96 250 L150 250 L120 572 L226 300 L168 300 Z"
+          fill="none" stroke="#FF8FE0" stroke-width="3.5" stroke-linejoin="round" opacity="0.9"/>
+    <!-- right-side segment notches (the ladder detail) -->
+    <g stroke="#FF2EC4" stroke-width="11" stroke-linecap="round">
+      <line x1="150" y1="104" x2="186" y2="104"/>
+      <line x1="132" y1="158" x2="170" y2="158"/>
+      <line x1="114" y1="212" x2="154" y2="212"/>
+    </g>
+    <g stroke="#FF8FE0" stroke-width="2.5" stroke-linecap="round" opacity="0.85">
+      <line x1="150" y1="104" x2="184" y2="104"/>
+      <line x1="132" y1="158" x2="168" y2="158"/>
+      <line x1="114" y1="212" x2="152" y2="212"/>
+    </g>
   </g>
 </svg>
