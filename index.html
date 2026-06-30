@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Electric Events AZ — Good People. Great Music.</title>
+<meta name="description" content="Electric Events AZ — where Arizona comes to dance. Find our weekly DJ nights across the Valley, shop merch, and stay in the loop." />
+<link rel="icon" href="assets/bolt.svg" type="image/svg+xml" />
+<meta property="og:title" content="Electric Events AZ — Good People. Great Music." />
+<meta property="og:description" content="Where Arizona comes to dance. See where we're spinning this week." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=Yellowtail&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<header class="nav" id="nav">
+  <a class="brand" href="#top" aria-label="Electric Events AZ home">
+    <img src="assets/bolt.svg" alt="" class="brand-bolt" />
+    <span class="brand-name">Electric Events <em>AZ</em></span>
+  </a>
+  <nav class="nav-links" id="navLinks">
+    <a href="#week">This Week</a>
+    <a href="#merch">Merch</a>
+    <a href="#about">About</a>
+    <a href="#follow">Follow</a>
+  </nav>
+  <div class="nav-actions">
+    <a href="#merch" class="btn btn-ghost btn-sm order-now">Order Now</a>
+    <button class="icon-btn" id="accountBtn" aria-label="Account" title="Account">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
+    </button>
+    <button class="icon-btn cart-btn" id="cartBtn" aria-label="Cart" title="Cart">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2 3h3l2.5 13h11l2-9H6"/></svg>
+      <span class="cart-count" id="cartCount" hidden>0</span>
+    </button>
+    <button class="icon-btn nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="top">
+  <div class="hero-bg" aria-hidden="true">
+    <div class="grid-floor"></div>
+    <div class="glow glow-pink"></div>
+    <div class="glow glow-yellow"></div>
+    <div class="eq" id="eq"></div>
+    <div class="grain"></div>
+  </div>
+  <div class="hero-inner">
+    <img src="assets/bolt.svg" alt="Electric Events AZ" class="hero-bolt flicker" />
+    <h1 class="hero-title">ELECTRIC EVENTS <span>AZ</span></h1>
+    <p class="hero-script">Good People. Great Music.</p>
+    <p class="hero-sub">Where Arizona comes to dance.</p>
+    <div class="hero-cta">
+      <a href="#week" class="btn btn-pink">Where to find us →</a>
+      <a href="#merch" class="btn btn-yellow">Shop Merch</a>
+    </div>
+    <a href="#week" class="tonight-chip" id="tonightChip" hidden>
+      <span class="pulse"></span><span id="tonightChipText">Loading tonight…</span>
+    </a>
+  </div>
+  <a href="#week" class="scroll-cue" aria-label="Scroll">▾</a>
+</section>
+
+<!-- ===== THIS WEEK / CALENDAR ===== -->
+<section class="section week" id="week">
+  <div class="section-head reveal">
+    <p class="kicker">The Weekly</p>
+    <h2 class="section-title">Find Us This Week</h2>
+    <p class="section-lead">No guesswork. Here's exactly where we're spinning across the Valley — pick a night and pull up.</p>
+  </div>
+
+  <div class="now-card reveal" id="nowCard"><!-- filled by JS --></div>
+
+  <div class="week-grid" id="weekGrid"><!-- filled by JS --></div>
+
+  <div class="week-foot reveal">
+    <p>Want us at your spot? Bars, private parties, brand activations — we bring the floor.</p>
+    <a href="#follow" class="btn btn-ghost">Book Electric Events</a>
+  </div>
+</section>
+
+<!-- ===== MERCH ===== -->
+<section class="section merch" id="merch">
+  <div class="section-head reveal">
+    <p class="kicker">The Drop</p>
+    <h2 class="section-title">Merch</h2>
+    <p class="section-lead">Rep the bolt. New pieces drop with the seasons — grab them before they're gone.</p>
+  </div>
+  <div class="merch-grid" id="merchGrid"><!-- filled by JS --></div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section class="section about" id="about">
+  <div class="about-wrap reveal">
+    <img src="assets/bolt.svg" alt="" class="about-bolt" />
+    <div class="about-text">
+      <p class="kicker">Who we are</p>
+      <h2 class="section-title">Good People.<br>Great Music.</h2>
+      <p>Electric Events AZ is a Phoenix-grown crew built on one simple idea: bring real people together over music that actually moves them. We run dance nights across the Valley — residencies, takeovers, private parties — and we keep the energy honest and the floor full.</p>
+      <p>No velvet-rope nonsense. Just great music, good people, and a city that knows how to dance.</p>
+      <div class="about-stats">
+        <div><strong id="statNights">2</strong><span>nights / week</span></div>
+        <div><strong>AZ</strong><span>born &amp; raised</span></div>
+        <div><strong>All</strong><span>are welcome</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOLLOW ===== -->
+<section class="section follow" id="follow">
+  <div class="section-head reveal">
+    <p class="kicker">Stay close</p>
+    <h2 class="section-title">Follow the Bolt</h2>
+    <p class="section-lead">Set times, secret sets, and last-minute pop-ups land on our socials first.</p>
+  </div>
+  <div class="social-cards reveal">
+    <a class="social-card ig" href="https://www.instagram.com/electriceventsaz" target="_blank" rel="noopener">
+      <span class="social-ico">📸</span>
+      <span class="social-handle">@electriceventsaz</span>
+      <span class="social-net">Instagram</span>
+      <span class="btn btn-pink btn-sm">Follow</span>
+    </a>
+    <a class="social-card tt" href="https://www.tiktok.com/@electriceventsaz" target="_blank" rel="noopener">
+      <span class="social-ico">🎵</span>
+      <span class="social-handle">@electriceventsaz</span>
+      <span class="social-net">TikTok</span>
+      <span class="btn btn-yellow btn-sm">Follow</span>
+    </a>
+  </div>
+
+  <div class="newsletter reveal">
+    <h3>Stay in the Loop</h3>
+    <p>Weekly set times + first dibs on merch drops. No spam, just the bolt.</p>
+    <form id="newsletterForm" class="news-form">
+      <input type="email" id="newsEmail" placeholder="you@email.com" required />
+      <button type="submit" class="btn btn-pink">Sign Up</button>
+    </form>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer-top">
+    <a class="brand" href="#top">
+      <img src="assets/bolt.svg" alt="" class="brand-bolt" />
+      <span class="brand-name">Electric Events <em>AZ</em></span>
+    </a>
+    <nav class="footer-nav">
+      <a href="#week">This Week</a>
+      <a href="#merch">Merch</a>
+      <a href="#about">About</a>
+      <a href="#follow">Follow</a>
+    </nav>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/electriceventsaz" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a>
+      <a href="https://www.tiktok.com/@electriceventsaz" target="_blank" rel="noopener" aria-label="TikTok">TikTok</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© <span id="year"></span> Electric Events AZ — Good People. Great Music.</p>
+    <p class="pay">We accept Cash App · Apple Pay · Google Pay · Visa · Mastercard · Amex · Discover</p>
+  </div>
+</footer>
+
+<!-- ===== CART DRAWER ===== -->
+<div class="overlay" id="overlay" hidden></div>
+<aside class="drawer" id="cartDrawer" aria-hidden="true" aria-label="Shopping cart">
+  <div class="drawer-head">
+    <h3>Your Cart</h3>
+    <button class="icon-btn" id="cartClose" aria-label="Close cart">✕</button>
+  </div>
+  <div class="drawer-body" id="cartItems"></div>
+  <div class="drawer-foot">
+    <div class="subtotal"><span>Subtotal</span><strong id="cartSubtotal">$0.00</strong></div>
+    <button class="btn btn-pink btn-block" id="checkoutBtn">Checkout</button>
+    <p class="drawer-note" id="checkoutNote"></p>
+  </div>
+</aside>
+
+<!-- ===== ACCOUNT MODAL ===== -->
+<div class="modal" id="accountModal" aria-hidden="true">
+  <div class="modal-card">
+    <button class="icon-btn modal-close" id="accountClose" aria-label="Close">✕</button>
+    <div id="accountView"><!-- filled by JS --></div>
+  </div>
+</div>
+
+<!-- ===== TOAST ===== -->
+<div class="toast" id="toast" hidden></div>
+
+<script src="app.js"></script>
+</body>
+</html>
