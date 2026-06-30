@@ -101,9 +101,12 @@ em{font-style:normal}
 .glow-pink{width:46vw;height:46vw;background:radial-gradient(circle,rgba(255,46,196,.7),transparent 70%);top:-8%;left:-6%}
 .glow-yellow{width:40vw;height:40vw;background:radial-gradient(circle,rgba(255,200,61,.55),transparent 70%);bottom:-6%;right:-8%;animation-delay:-7s}
 @keyframes float{50%{transform:translate(4vw,3vh) scale(1.12)}}
-.eq{position:absolute;bottom:0;left:0;right:0;height:120px;display:flex;align-items:flex-end;justify-content:center;gap:5px;opacity:.5}
-.eq span{width:7px;background:linear-gradient(var(--pink),var(--yellow));border-radius:3px 3px 0 0;animation:eq 1s ease-in-out infinite}
-@keyframes eq{0%,100%{height:14px}50%{height:90px}}
+.eq{position:absolute;bottom:0;left:0;right:0;height:clamp(200px,32vh,340px);display:flex;align-items:flex-end;justify-content:center;gap:7px;opacity:.92}
+.eq span{width:12px;border-radius:5px 5px 0 0;
+  background:linear-gradient(to bottom,#ff5a5a 0%,#ff1f1f 28%,#9c0d0d 68%,#3a0202 100%);
+  box-shadow:0 0 14px rgba(255,40,40,.45);
+  animation:eq 1s ease-in-out infinite;will-change:height}
+@keyframes eq{0%,100%{height:16px}50%{height:var(--h,140px)}}
 .grain{position:absolute;inset:0;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");mix-blend-mode:overlay}
 
 .hero-inner{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center}
@@ -123,8 +126,6 @@ em{font-style:normal}
 .tonight-chip:hover{box-shadow:var(--glow-pink);transform:translateY(-2px)}
 .pulse{width:10px;height:10px;border-radius:50%;background:var(--yellow);box-shadow:var(--glow-yellow);animation:pulse 1.4s infinite}
 @keyframes pulse{50%{transform:scale(1.5);opacity:.5}}
-.scroll-cue{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);z-index:2;color:var(--muted);font-size:1.4rem;animation:bob 1.8s infinite}
-@keyframes bob{50%{transform:translate(-50%,8px)}}
 
 /* ---------- sections ---------- */
 .section{max-width:var(--maxw);margin:0 auto;padding:clamp(4rem,9vw,7rem) clamp(1rem,4vw,2rem)}

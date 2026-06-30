@@ -364,8 +364,19 @@ function initReveal(){
 /* ======================= hero equalizer ======================= */
 function initEq(){
   const eq = $("#eq"); if(!eq) return;
-  const n = Math.min(40, Math.floor(window.innerWidth/26));
-  for(let i=0;i<n;i++){ const s=document.createElement("span"); s.style.animationDelay = (Math.sin(i)*0.5 + i*0.05).toFixed(2)+"s"; s.style.animationDuration=(0.7+ (i%5)*0.12).toFixed(2)+"s"; eq.appendChild(s); }
+  eq.innerHTML = "";
+  const maxH = Math.min(300, Math.round(window.innerHeight*0.30));
+  const n = Math.min(54, Math.floor(window.innerWidth/22));
+  for(let i=0;i<n;i++){
+    const s=document.createElement("span");
+    // varied peak height per bar -> spectrum look (deterministic, no Math.random reliance)
+    const wave = (Math.sin(i*0.7)+Math.sin(i*1.9))*0.5;      // -1..1-ish
+    const h = Math.round(maxH*(0.45 + 0.55*((wave+2)/4 + (i%5)/9)));
+    s.style.setProperty('--h', Math.max(60, h)+'px');
+    s.style.animationDelay = (Math.sin(i)*0.5 + i*0.05).toFixed(2)+"s";
+    s.style.animationDuration=(0.6+ (i%6)*0.11).toFixed(2)+"s";
+    eq.appendChild(s);
+  }
 }
 
 /* ======================= boot ======================= */
